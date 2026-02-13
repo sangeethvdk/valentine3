@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+/* Page System */
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Hero */
+.bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+}
+
+.content {
+    position: relative;
+    top: 35%;
+}
+
+/* Neon Text */
+.neon {
+    font-size: 60px;
+    color: #ff4da6;
+    text-shadow: 0 0 10px #ff4da6,
+                 0 0 20px #ff1a75,
+                 0 0 40px #ff1a75;
+}
+
+.handwriting {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+}
+
+.small {
+    font-size: 30px;
+}
+
+.small-title {
+    font-size: 35px;
+}
+
+.small-text {
+    font-size: 18px;
+}
+
+/* Buttons */
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #ff1a75;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* Page 2 */
+.love-text {
+    max-width: 800px;
+    margin: 30px auto;
+    line-height: 1.8;
+}
+
+/* Page 3 */
+.journey {
+    font-size: 45px;
+}
+
+.counter {
+    margin: 20px;
+    font-size: 20px;
+    color: #ff4da6;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.final {
+    margin-top: 40px;
+    font-size: 18px;
+}
