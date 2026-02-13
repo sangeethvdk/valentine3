@@ -6,6 +6,7 @@ body {
     background: black;
     color: white;
     text-align: center;
+    overflow-x: hidden;
 }
 
 /* Page System */
@@ -13,10 +14,31 @@ body {
     display: none;
     min-height: 100vh;
     padding: 40px;
+    animation: fadeIn 1s ease;
 }
 
 .page.active {
     display: block;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Floating Hearts */
+.hearts::before {
+    content: "❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
+    position: fixed;
+    width: 100%;
+    font-size: 20px;
+    opacity: 0.15;
+    animation: float 20s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-100vh); }
 }
 
 /* Hero */
@@ -35,7 +57,7 @@ body {
     top: 35%;
 }
 
-/* Neon Text */
+/* Text Styles */
 .neon {
     font-size: 60px;
     color: #ff4da6;
@@ -49,19 +71,11 @@ body {
     font-size: 50px;
 }
 
-.small {
-    font-size: 30px;
-}
+.small { font-size: 30px; }
+.small-title { font-size: 35px; }
+.small-text { font-size: 18px; }
 
-.small-title {
-    font-size: 35px;
-}
-
-.small-text {
-    font-size: 18px;
-}
-
-/* Buttons */
+/* Button */
 .btn {
     margin-top: 20px;
     padding: 12px 25px;
@@ -77,24 +91,21 @@ body {
     transform: scale(1.1);
 }
 
-/* Page 2 */
+/* Love Text */
 .love-text {
     max-width: 800px;
     margin: 30px auto;
     line-height: 1.8;
 }
 
-/* Page 3 */
-.journey {
-    font-size: 45px;
-}
-
+/* Counter */
 .counter {
     margin: 20px;
     font-size: 20px;
     color: #ff4da6;
 }
 
+/* Gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -104,9 +115,67 @@ body {
 .gallery img {
     width: 100%;
     border-radius: 10px;
+    cursor: pointer;
 }
 
+/* Final Text */
 .final {
     margin-top: 40px;
     font-size: 18px;
+}
+
+/* Slideshow */
+.slideshow-page {
+    position: relative;
+}
+
+.slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.slide:nth-child(1) { background-image: url("https://picsum.photos/1600/900?11"); }
+.slide:nth-child(2) { background-image: url("https://picsum.photos/1600/900?12"); }
+.slide:nth-child(3) { background-image: url("https://picsum.photos/1600/900?13"); }
+
+.slide.active {
+    opacity: 0.5;
+}
+
+/* Image Modal */
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+    padding-top: 50px;
+}
+
+.image-modal img {
+    max-width: 80%;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    cursor: pointer;
 }
