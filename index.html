@@ -11,6 +11,8 @@
     <source src="music.mp3" type="audio/mp3">
 </audio>
 
+<div class="hearts"></div>
+
 <!-- PAGE 1 -->
 <section id="page1" class="page active">
     <img src="https://picsum.photos/1600/900" class="bg-image">
@@ -35,27 +37,42 @@
 </section>
 
 <!-- PAGE 3 -->
-<section id="page3" class="page">
-    <h1 class="journey">Three Years of Our Journey</h1>
+<section id="page3" class="page slideshow-page">
 
-    <div class="counter">
-        Together for: <span id="loveCounter"></span>
+    <div class="slideshow">
+        <div class="slide active"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
     </div>
 
-    <div class="gallery">
-        <img src="https://picsum.photos/300?1">
-        <img src="https://picsum.photos/300?2">
-        <img src="https://picsum.photos/300?3">
-        <img src="https://picsum.photos/300?4">
-        <img src="https://picsum.photos/300?5">
-        <img src="https://picsum.photos/300?6">
-    </div>
+    <div class="slideshow-content">
+        <h1 class="journey">Three Years of Our Journey</h1>
 
-    <p class="final">
-        No matter what happens, I will always choose you.  
-        Forever your Bobby ❤️
-    </p>
+        <div class="counter">
+            Together for: <span id="loveCounter"></span>
+        </div>
+
+        <div class="gallery">
+            <img src="https://picsum.photos/300?1" onclick="openImage(this)">
+            <img src="https://picsum.photos/300?2" onclick="openImage(this)">
+            <img src="https://picsum.photos/300?3" onclick="openImage(this)">
+            <img src="https://picsum.photos/300?4" onclick="openImage(this)">
+            <img src="https://picsum.photos/300?5" onclick="openImage(this)">
+            <img src="https://picsum.photos/300?6" onclick="openImage(this)">
+        </div>
+
+        <p class="final">
+            No matter what happens, I will always choose you.  
+            Forever your Bobby ❤️
+        </p>
+    </div>
 </section>
+
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="image-modal">
+    <span onclick="closeImage()" class="close-btn">×</span>
+    <img id="modalImage">
+</div>
 
 <script src="script.js"></script>
 </body>
