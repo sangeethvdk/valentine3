@@ -1,5 +1,5 @@
 // Typewriter Text
-const text = "From the day we met, my life changed in the most beautiful way. You became my happiness, my comfort, and my forever person. These three years with you have been my greatest blessing. Every smile of yours makes my world brighter. I don't just love you today, I will love you every tomorrow and every forever.";
+const text = "From the day we met on 13 September 2022, my life changed in the most beautiful way. You became my happiness, my comfort, and my forever person. These three years with you have been my greatest blessing. Every smile of yours makes my world brighter. I don't just love you today, I will love you every tomorrow and every forever.";
 
 let index = 0;
 let musicPlayed = false;
@@ -11,7 +11,6 @@ function goToPage(pageNumber) {
 
     document.getElementById("page" + pageNumber).classList.add("active");
 
-    // Start music only when entering page 2
     if (pageNumber === 2 && !musicPlayed) {
         document.getElementById("bgMusic").play();
         typeWriter();
@@ -27,7 +26,7 @@ function typeWriter() {
     }
 }
 
-// Love Counter (2022-09-13)
+// Love Counter
 const startDate = new Date("2022-09-13");
 
 function updateCounter() {
@@ -43,3 +42,27 @@ function updateCounter() {
 }
 
 setInterval(updateCounter, 1000);
+
+// Slideshow
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlides() {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
+    slides[slideIndex - 1].classList.add("active");
+    setTimeout(showSlides, 5000);
+}
+
+showSlides();
+
+// Image Popup
+function openImage(img) {
+    document.getElementById("imageModal").style.display = "block";
+    document.getElementById("modalImage").src = img.src;
+}
+
+function closeImage() {
+    document.getElementById("imageModal").style.display = "none";
+}
